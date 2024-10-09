@@ -1,5 +1,8 @@
 package org.mathieu.domain.models.character
 
+import org.mathieu.domain.models.location.Location
+import org.mathieu.domain.models.location.LocationPreview
+
 /**
  * Represents a detailed characterization, typically derived from a data source or API.
  *
@@ -10,7 +13,7 @@ package org.mathieu.domain.models.character
  * @property type Further description or subspecies of the character.
  * @property gender The gender of the character.
  * @property origin The origin location of the character, represented as a name and an id of location.
- * @property location The current or last known location of the character, represented as a name and an id of location.
+ * @property location The current or last known location of the character, represented as a LocationPreview.
  * @property avatarUrl A URL pointing to an avatar or image of the character.
  */
 data class Character(
@@ -21,7 +24,7 @@ data class Character(
     val type: String,
     val gender: CharacterGender,
     val origin: Pair<String, Int>,
-    val location: Pair<String, Int>,
+    val location: LocationPreview,
     val avatarUrl: String
 )
 
@@ -31,10 +34,15 @@ data class Character(
 enum class CharacterStatus {
     Alive, Dead, Unknown
 }
-//test push2
+
 /**
  * Represents the gender classification of a character.
  */
 enum class CharacterGender {
     Female, Male, Genderless, Unknown
 }
+
+/**
+ * Light(lazy) representation of a Location entity
+ */
+
