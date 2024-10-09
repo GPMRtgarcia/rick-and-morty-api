@@ -31,7 +31,7 @@ data class Character(
 enum class CharacterStatus {
     Alive, Dead, Unknown
 }
-//test push
+//test push2
 /**
  * Represents the gender classification of a character.
  */
